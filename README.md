@@ -44,6 +44,7 @@ This project is a separate project using Conda of Anaconda. It provides a clear 
 - application.py: This is the main Flask application file.
 - setup.py: This file contains the configuration for packaging your project as a Python package.
 - path: This Folder contain these files : raw_data, train_data, test_data
+- upload_data.py: This file is used to send data to your mongodb Database
 - deployment_documentation : This Folder contain the documentation that how to deploy on local or AWS
 
 #### Getting Started
@@ -104,6 +105,9 @@ Open a web browser and visit http://localhost:5000 to access the application.
 ## EDA & Business Implication
 
 EDA stands for exploratory data analysis where we explore our data and grab insights from it. EDA helps us in getting knowledge in form of various plots and diagrams where we can easily understand the data and its features.
+
+- __Data Export from Db:__
+The data in a stored database is exported as a CSV file to be used for model training.
 
 - __Data exploration__
 
@@ -188,7 +192,7 @@ To provide a user-friendly interface, we have integrated the model into a Flask 
 The Flask application can be accessed by running the application.py file. It provides a web interface where users can input the required features, and the model will predict the price based on the provided information.
 <br>
 
-![image](Images/output9.png)<br>
+![image](Images/output6.png)<br>
 <br>
 
 Using Flask for the front-end enables a seamless integration of the machine learning model into a user-friendly web application, enhancing the usability and accessibility of the project.

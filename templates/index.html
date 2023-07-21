@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cement Strength Prediction Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #45b7c0, #2dfdf0);
+            padding: 20px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 100%;
+            background: linear-gradient(to bottom right, #45b7c0, #2dfdf0);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: black;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #0077be;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #45b7c0;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #005b8f;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1 style="text-align: center; background-color: white ">Cement Strength Prediction</h1>
+
+        <form action="{{ url_for('predict_datapoint') }}" method="POST">
+            <div class="form-group">
+                <label for="cement"><b>Cement (component 1)(kg in a m^3 mixture)</b></label>
+                <input type="number" class="form-control" id="cement" name="cement" value="0.00" step="any" required>
+            </div>
+
+            <div class="form-group">
+                <label for="blastFurnace"><b>Blast Furnace Slag (component 2)(kg in a m^3 mixture)</b></label>
+                <input type="number" class="form-control" id="blastFurnace" name="blastFurnace" value="0.00" step="any" required>
+            </div>
+
+            <div class="form-group">
+                <label for="flyAsh"><b>Fly Ash (component 3)(kg in a m^3 mixture)</b></label>
+                <input type="number" class="form-control" id="flyAsh" name="flyAsh" value="0.00" step="any" required>
+            </div>
+
+            <div class="form-group">
+                <label for="water"><b>Water (component 4)(kg in a m^3 mixture)</b></label>
+                <input type="number" class="form-control" id="water" name="water" value="0.00" step="any" required>
+            </div>
+
+            <div class="form-group">
+                <label for="superplasticizer"><b>Superplasticizer (component 5)(kg in a m^3 mixture)</b></label>
+                <input type="number" class="form-control" id="superplasticizer" name="superplasticizer" value="0.00" step="any" required>
+            </div>
+
+            <div class="form-group">
+                <label for="courseAggregate"><b>Coarse Aggregate (component 6)(kg in a m^3 mixture)</b></label>
+                <input type="number" class="form-control" id="courseAggregate" name="courseAggregate" value="0.00" step="any" required>
+            </div>
+
+            <div class="form-group">
+                <label for="fineaggregate"><b>Fine Aggregate (component 7)(kg in a m^3 mixture)</b></label>
+                <input type="number" class="form-control" id="fineaggregate" name="fineaggregate" value="0.00" step="any" required>
+            </div>
+
+            <div class="form-group">
+                <label for="age"><b>Age (day)</b></label>
+                <input type="number" class="form-control" id="age" name="age" step="any" required>
+            </div>
+
+            <div class="mb-3">
+                <input class="btn btn-primary" type="submit" value="Predict the cement strength" required />
+            </div>
+        </form>
+
+        <div class="result">
+            {{ final_result }}
+        </div>
+    </div>
+</body>
+</html>
