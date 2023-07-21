@@ -141,14 +141,14 @@ Scaling the Data: The data was scaled using the StandardScaler function from the
 5. Concrete strength increases when less water is used in preparing it
 <br>
 
-![image](Images/output3.png)<br>
+![image](Images/output4.png)<br>
 #### Observations from CC Strength vs (Fine aggregate, Super Plasticizer, FlyAsh)
 
 - As Flyash increases the strength decreases
 - Strength increases with Super plasticizer
 <br>
 
-![image](Images/output3.png)<br>
+![image](Images/output5.png)<br>
 #### Observations from CC Strength vs (Fine aggregate, Super Plasticizer, Water)
 
 - Strength decreases with increase in water, strength increases with increase in Super plasticizer (already from above plots)
